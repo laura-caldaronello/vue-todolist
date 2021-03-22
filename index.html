@@ -15,13 +15,14 @@
 
     <div id="root">
 
-        <input class="mystyle" placeholder="Nuovo To Do" id='to-do-input' type="text" @keyup.enter="getToDo">
-        <button class="mystyle" @click='getToDo'>Aggiungi</button>
+        <input class="mystyle" placeholder="Nuovo To Do" id="to-do-input" type="text" @keyup.enter="getToDo">
+        <button class="mystyle" @click="getToDo">Aggiungi</button>
+        <button class="mystyle" @click="restoreCancelledToDos">Ripristina</button>
         
         <h2 class="mystyleh2">Cose da fare:</h2>
         <div id="to-do-container">
             <ul v-if="toDos.length > 0" id="to-do-list">
-                <li v-for='(todo,index) in toDos'>
+                <li v-for="(todo,index) in toDos">
                     <span class="borded">
                         <span>
                             {{todo}}
@@ -39,7 +40,7 @@
         <h2 class="mystyleh2">Cose fatte:</h2>
         <div id="done-container">
             <ul v-if="doneToDos.length > 0" id="done-list">
-                <li v-for='(todo,index) in doneToDos'>
+                <li v-for="(todo,index) in doneToDos">
                     <span class="borded">
                         <span>
                             {{todo}}
