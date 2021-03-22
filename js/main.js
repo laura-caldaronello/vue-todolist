@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#root',
     data: {
-        toDos: ['ciao'],
+        toDos: ['Fare la spesa'],
         cancelledToDos: [],
         doneToDos: []
     },
@@ -30,7 +30,7 @@ var app = new Vue({
             this.toDos.push(done[0]);
         },
         restoreCancelledToDos: function() {
-            this.cancelledToDos.forEach((element,index) => {
+            this.cancelledToDos.forEach((element) => {
                 this.toDos.push(element);
             });
             this.cancelledToDos = [];
