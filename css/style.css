@@ -14,22 +14,31 @@ body {
     padding: 10px;
 }
 
-#to-do-container {
+[id$='-container'] {
     width: 50%;
     margin: 0 auto;
     margin-top: 10px;
-    background-color: lightgray;
+}
+[id$='-container'] h3 {
+    padding: 10px;
 }
 
-#to-do-list {
+#to-do-container {
+    background-color: lightgray;
+}
+#done-container {
+    background-color: lightgreen;
+}
+
+[id$='-list'] {
     list-style: none;
 }
-#to-do-list li {
+[id$='-list'] li {
     display: flex;
     justify-content: space-between;
     padding: 10px;
 }
-#to-do-list i {
+[id$='-list'] i {
     cursor: pointer;
     padding-left: 10px;
 }

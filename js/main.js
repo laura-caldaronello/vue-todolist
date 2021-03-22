@@ -18,6 +18,14 @@ var app = new Vue({
         doneToDo: function(index) {
             var done = this.toDos.splice(index,1);
             this.doneToDos.push(done[0]);
+        },
+        removeDoneToDo: function(index) {
+            var cancelled = this.doneToDos.splice(index,1);
+            this.cancelledToDos.push(cancelled[0]);
+        },
+        undoDoneToDo: function(index) {
+            var done = this.doneToDos.splice(index,1);
+            this.toDos.push(done[0]);
         }
     }
 

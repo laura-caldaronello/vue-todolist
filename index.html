@@ -15,21 +15,37 @@
 
     <div id="root">
 
-        <input id='to-do-input' type="text">
+        <input id='to-do-input' type="text" @keyup.enter="getToDo">
         <button @click='getToDo'>Aggiungi</button>
         
         <div id="to-do-container">
-            <ul id="to-do-list">
+            <ul v-if="toDos.length > 0" id="to-do-list">
                 <li v-for='(todo,index) in toDos'>
                     <span>
                         {{todo}}
                     </span>
                     <span>
-                        <i class="fas fa-check" @click="removeToDo(index)"></i>
-                        <i class="fas fa-trash-alt" @click="doneToDo(index)"></i>
+                        <i class="fas fa-check" @click="doneToDo(index)"></i>
+                        <i class="fas fa-trash-alt" @click="removeToDo(index)"></i>
                     </span>
                 </li>
             </ul>
+            <h3 v-else>Non hai nulla da fare!</h3>
+        </div>
+
+        <div id="done-container">
+            <ul v-if="doneToDos.length > 0" id="done-list">
+                <li v-for='(todo,index) in doneToDos'>
+                    <span>
+                        {{todo}}
+                    </span>
+                    <span>
+                        <i class="fas fa-undo" @click="undoDoneToDo(index)"></i>
+                        <i class="fas fa-trash-alt" @click="removeDoneToDo(index)"></i>
+                    </span>
+                </li>
+            </ul>
+            <h3 v-else>Non hai nulla di fatto!</h3>
         </div>
 
     </div>    
