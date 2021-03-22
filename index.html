@@ -15,33 +15,39 @@
 
     <div id="root">
 
-        <input id='to-do-input' type="text" @keyup.enter="getToDo">
-        <button @click='getToDo'>Aggiungi</button>
+        <input class="mystyle" placeholder="Nuovo To Do" id='to-do-input' type="text" @keyup.enter="getToDo">
+        <button class="mystyle" @click='getToDo'>Aggiungi</button>
         
+        <h2 class="mystyleh2">Cose da fare:</h2>
         <div id="to-do-container">
             <ul v-if="toDos.length > 0" id="to-do-list">
                 <li v-for='(todo,index) in toDos'>
-                    <span>
-                        {{todo}}
-                    </span>
-                    <span>
-                        <i class="fas fa-check" @click="doneToDo(index)"></i>
-                        <i class="fas fa-trash-alt" @click="removeToDo(index)"></i>
+                    <span class="borded">
+                        <span>
+                            {{todo}}
+                        </span>
+                        <span>
+                            <i class="fas fa-check" @click="doneToDo(index)"></i>
+                            <i class="fas fa-trash-alt" @click="removeToDo(index)"></i>
+                        </span>
                     </span>
                 </li>
             </ul>
             <h3 v-else>Non hai nulla da fare!</h3>
         </div>
 
+        <h2 class="mystyleh2">Cose fatte:</h2>
         <div id="done-container">
             <ul v-if="doneToDos.length > 0" id="done-list">
                 <li v-for='(todo,index) in doneToDos'>
-                    <span>
-                        {{todo}}
-                    </span>
-                    <span>
-                        <i class="fas fa-undo" @click="undoDoneToDo(index)"></i>
-                        <i class="fas fa-trash-alt" @click="removeDoneToDo(index)"></i>
+                    <span class="borded">
+                        <span>
+                            {{todo}}
+                        </span>
+                        <span>
+                            <i class="fas fa-undo" @click="undoDoneToDo(index)"></i>
+                            <i class="fas fa-trash-alt" @click="removeDoneToDo(index)"></i>
+                        </span>
                     </span>
                 </li>
             </ul>

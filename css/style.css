@@ -14,6 +14,19 @@ body {
     padding: 10px;
 }
 
+.mystyle {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+h2.mystyleh2 {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: left;
+}
+
 [id$='-container'] {
     width: 50%;
     margin: 0 auto;
@@ -26,17 +39,27 @@ body {
 #to-do-container {
     background-color: lightgray;
 }
+#to-do-container span.borded {
+    border-color: grey;
+}
 #done-container {
     background-color: lightgreen;
+}
+#done-container span.borded {
+    border-color: green;
 }
 
 [id$='-list'] {
     list-style: none;
 }
 [id$='-list'] li {
+    padding: 10px;
+}
+[id$='-list'] li span.borded {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
 }
 [id$='-list'] i {
     cursor: pointer;
