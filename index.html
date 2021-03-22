@@ -4,21 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>Document</title>
 </head>
 <body>
+
+    <img id="logo" src="img/logo.png" alt="boolean logo">
+
     <div id="root">
-        <input id='to-do' type="text">
+
+        <input id='to-do-input' type="text">
         <button @click='getToDo'>Aggiungi</button>
         
-        <ul id="list">
-            <li v-for='(todo,index) in toDos'>
-                {{todo}}
-                <span id="remove" @click="removeToDo(index)"> x</span>
-            </li>
-        </ul>
+        <div id="to-do-container">
+            <ul id="to-do-list">
+                <li v-for='(todo,index) in toDos'>
+                    <span>
+                        {{todo}}
+                    </span>
+                    <span>
+                        <i class="fas fa-check" @click="removeToDo(index)"></i>
+                        <i class="fas fa-trash-alt" @click="doneToDo(index)"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
     </div>    
 
     <script src="js/main.js"></script>
